@@ -20,7 +20,7 @@ configurations {
 }
 
 dependencies {
-    "compileOnly"("net.md-5:bungeecord-api:1.18-R0.1-SNAPSHOT")
+    "compileOnly"("net.md-5:bungeecord-api:1.21-R0.4")
     "api"(project(":nuvotifier-api"))
     "api"(project(":nuvotifier-common"))
 }
@@ -30,7 +30,7 @@ tasks.named<Copy>("processResources") {
     val internalVersion = project.ext["internalVersion"]
     inputs.property("internalVersion", internalVersion)
     filesMatching("bungee.yml") {
-        expand("internalVersion" to internalVersion)
+        expand(mapOf("internalVersion" to internalVersion))
     }
 }
 
